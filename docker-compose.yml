@@ -1,0 +1,25 @@
+version: '2'
+networks:
+    default:
+    nginx:
+        external:
+            name: nginx
+
+services:
+  wordpress:
+    networks:
+        default:
+        nginx:
+    volumes:
+        - ./filterbubbler-wp-plugin:/var/www/html/wp-content/plugins/filterbubbler
+    image: wordpress
+    environment:
+      - WORDPRESS_DB_PASSWORD=example
+      - VIRTUAL_HOST=filterbubbler.localhost
+
+  mysql:
+    networks:
+        default:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: example

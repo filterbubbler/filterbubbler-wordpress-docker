@@ -1,0 +1,3 @@
+[submodule "filterbubbler-wp-plugin"]
+	path = filterbubbler-wp-plugin
+	url = git@github.com:filterbubbler/filterbubbler-wp-plugin.git
